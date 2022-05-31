@@ -24,6 +24,10 @@ foreach (var item in pendientes)
     if (confirmarRealizacion == 1)
     {
         realizadas.Add(item);
-        pendientes.Remove(item);
     }
+}
+
+foreach (var item in realizadas)
+{
+    pendientes.Remove(item);
 }
