@@ -10,7 +10,7 @@ string descripcion;
 for (int i = 0; i < cantPendientes; i++)
 {
     Console.WriteLine("Ingrese la descripcion de la tarea");
-    descripcion= Console.ReadLine();
+    descripcion= "descripcion: " + Console.ReadLine();
     duracion= tiempo.Next (10,101);
     Tarea creador=  new Tarea(i+1, descripcion, duracion);
     pendientes.Add(creador);
@@ -27,7 +27,15 @@ foreach (var item in pendientes)
     }
 }
 
+Console.WriteLine("\nTareas realizadas:");
 foreach (var item in realizadas)
 {
     pendientes.Remove(item);
+    Console.WriteLine("id: " + item.TareaId + "\n" + item.Descripcion + "\nduracion: " + item.Duracion);
+}
+
+Console.WriteLine("\nTareas pendientes:");
+foreach (var item in pendientes)
+{
+    Console.WriteLine("id: " + item.TareaId + "\n" + item.Descripcion + "\nduracion: " + item.Duracion);
 }
